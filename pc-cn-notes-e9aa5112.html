@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2026 世界杯简明指南 · 观赛访问提醒</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            background: #f5f7fa;
+            color: #1e1e2a;
+            line-height: 1.6;
+        }
+        a {
+            color: #c1352b;
+            text-decoration: underline;
+            text-underline-offset: 2px;
+            transition: color 0.2s;
+        }
+        a:hover {
+            color: #a1261d;
+        }
+
+        /* === HERO (深色头图) === */
+        .hero {
+            background: linear-gradient(145deg, #0e1622 0%, #1c2a3a 100%);
+            color: #e8edf5;
+            padding: 4.5rem 1.5rem 5rem;
+            text-align: center;
+            position: relative;
+        }
+        .hero h1 {
+            font-size: 2.6rem;
+            font-weight: 600;
+            letter-spacing: -0.02em;
+            margin-bottom: 0.75rem;
+            line-height: 1.2;
+        }
+        .hero h1 span {
+            color: #f2c94c;
+        }
+        .hero p {
+            font-size: 1.15rem;
+            max-width: 640px;
+            margin: 0 auto 1.2rem;
+            color: #bccad9;
+        }
+        .hero .tagline {
+            display: inline-block;
+            background: rgba(255,255,255,0.06);
+            padding: 0.5rem 1.4rem;
+            border-radius: 40px;
+            font-size: 0.9rem;
+            color: #cbd8e8;
+            border: 1px solid rgba(255,255,255,0.08);
+        }
+
+        /* === 通用容器 === */
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        /* === 优势区 / 特征卡片 === */
+        .features {
+            background: #ffffff;
+            padding: 3.5rem 0 3rem;
+        }
+        .features h2 {
+            text-align: center;
+            font-size: 1.6rem;
+            font-weight: 550;
+            margin-bottom: 2.2rem;
+            letter-spacing: -0.01em;
+            color: #1f2937;
+        }
+        .grid-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 1.8rem;
+        }
+        .card {
+            background: #f9fafc;
+            border-radius: 16px;
+            padding: 1.8rem 1.4rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+            border: 1px solid #eef1f5;
+            transition: box-shadow 0.2s;
+        }
+        .card:hover {
+            box-shadow: 0 6px 18px rgba(0,0,0,0.04);
+        }
+        .card h3 {
+            font-size: 1.15rem;
+            font-weight: 600;
+            margin-bottom: 0.6rem;
+            color: #111827;
+        }
+        .card p {
+            font-size: 0.95rem;
+            color: #3f4a5a;
+        }
+
+        /* === 说明区 (简明指南 + 访问提醒) === */
+        .guide-section {
+            background: #ffffff;
+            padding: 2.8rem 0 3.2rem;
+            border-top: 1px solid #e3e8ef;
+        }
+        .guide-flex {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2.5rem;
+        }
+        .guide-main {
+            flex: 2;
+            min-width: 280px;
+        }
+        .guide-main h2 {
+            font-size: 1.5rem;
+            font-weight: 550;
+            margin-bottom: 1rem;
+            color: #1f2937;
+        }
+        .guide-main p {
+            margin-bottom: 1rem;
+            font-size: 1rem;
+        }
+        .guide-main ul {
+            list-style: none;
+            margin-bottom: 1.2rem;
+        }
+        .guide-main li {
+            padding: 0.3rem 0 0.3rem 1.3rem;
+            position: relative;
+        }
+        .guide-main li::before {
+            content: "·";
+            position: absolute;
+            left: 0;
+            color: #c1352b;
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+        .guide-side {
+            flex: 1.2;
+            min-width: 220px;
+            background: #f3f6fc;
+            border-radius: 18px;
+            padding: 1.8rem 1.5rem;
+            align-self: flex-start;
+        }
+        .guide-side h3 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 0.8rem;
+            color: #1e293b;
+        }
+        .guide-side p, .guide-side li {
+            font-size: 0.92rem;
+            color: #2d3a4e;
+        }
+        .guide-side ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        .guide-side li {
+            padding: 0.4rem 0;
+            border-bottom: 1px solid #dfe6f0;
+        }
+        .guide-side li:last-child {
+            border-bottom: none;
+        }
+
+        /* === FAQ 摘要 (简洁) === */
+        .faq-summary {
+            background: #f9fafc;
+            padding: 2.8rem 0 2.5rem;
+        }
+        .faq-summary h2 {
+            text-align: center;
+            font-size: 1.4rem;
+            font-weight: 550;
+            margin-bottom: 1.8rem;
+            color: #1f2937;
+        }
+        .faq-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.6rem 2rem;
+        }
+        .faq-item {
+            border-bottom: 1px solid #e5eaf1;
+            padding-bottom: 1.1rem;
+        }
+        .faq-item strong {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 0.3rem;
+            color: #111827;
+        }
+        .faq-item p {
+            font-size: 0.92rem;
+            color: #3b4a5c;
+        }
+
+        /* === 底部链接 === */
+        .bottom-links {
+            background: #ffffff;
+            padding: 2.5rem 0 3rem;
+            text-align: center;
+            border-top: 1px solid #e3e8ef;
+        }
+        .bottom-links p {
+            font-size: 0.95rem;
+            color: #3f4e62;
+            max-width: 700px;
+            margin: 0 auto 0.5rem;
+        }
+        .bottom-links .link-group {
+            margin-top: 1.2rem;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 0.8rem 1.8rem;
+        }
+        .bottom-links .link-group a {
+            font-size: 0.95rem;
+        }
+
+        /* === 响应式细节 === */
+        @media (max-width: 640px) {
+            .hero h1 { font-size: 1.9rem; }
+            .hero p { font-size: 1rem; }
+            .guide-flex { flex-direction: column; }
+            .faq-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- HERO 深色头图 -->
+<section class="hero">
+    <div class="container">
+        <div class="tagline">World Cup 2026 · 简明观赛指南</div>
+        <h1>直达 <span>世界杯</span> 现场<br>信息聚合与访问提醒</h1>
+        <p>一站式了解2026年世界杯赛程、球队动态及官方渠道。本页为你梳理关键入口与实用提醒，省去信息筛选的精力。</p>
+    </div>
+</section>
+
+<!-- 优势区 / 特征卡片 -->
+<section class="features">
+    <div class="container">
+        <h2>为什么关注这个页面？</h2>
+        <div class="grid-cards">
+            <div class="card">
+                <h3>赛事及时同步</h3>
+                <p>持续整合小组赛、淘汰赛时间及场地变更，避免错过关键节点。</p>
+            </div>
+            <div class="card">
+                <h3>精简访问路径</h3>
+                <p>将官方信息入口集中呈现，无需多次跳转即可定位所需服务。</p>
+            </div>
+            <div class="card">
+                <h3>提醒与贴士</h3>
+                <p>开闭幕式时间、门票状态、常见访问问题均在此归纳，方便随时查阅。</p>
+            </div>
+            <div class="card">
+                <h3>中立信息筛选</h3>
+                <p>基于公开数据整理，不做主观预测，确保内容客观可靠。</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 说明区：简明指南 + 访问提醒 -->
+<section class="guide-section">
+    <div class="container guide-flex">
+        <div class="guide-main">
+            <h2>简明指南 · 从赛程到访问</h2>
+            <p>2026年世界杯将在北美三国联合举办，赛事规模进一步扩大。以下为几个关键要点：</p>
+            <ul>
+                <li>赛程覆盖2026年6月至7月，共计48支队伍104场比赛。</li>
+                <li>官方售票与信息更新均通过主办方平台发布，请认准可信域名。</li>
+                <li>各队伍集训名单及热身赛安排通常在赛前3—6个月陆续公布。</li>
+            </ul>
+            <p>如需直接访问赛事核心信息源，推荐从 <a href="https://pc-cn-fifa2026.com">世界杯</a> 官方频道获取第一手公告与资料。</p>
+            <p style="margin-top: 0.8rem;">所有数据均以官方发布时间为准，本页作为辅助参考，帮你节省日常检索所花费的时间。</p>
+        </div>
+        <div class="guide-side">
+            <h3>访问提醒</h3>
+            <ul>
+                <li>⚡ 建议提前1小时进入相关页面，避免瞬时拥堵。</li>
+                <li>🔒 只通过 https 协议站点操作，警惕仿冒页面。</li>
+                <li>📅 关注时区差异，大部分开球时间以东八区为基准换算。</li>
+                <li>📱 移动端与桌面端体验略有差异，可预先测试。</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<!-- FAQ 摘要 -->
+<section class="faq-summary">
+    <div class="container">
+        <h2>常见问题摘要</h2>
+        <div class="faq-grid">
+            <div class="faq-item">
+                <strong>如何确认赛事官方页面？</strong>
+                <p>请直接通过 <a href="https://pc-cn-fifa2026.com">世界杯</a> 域名进入，核对页面底部版权信息及机构标识。第三方转载内容仅供参考。</p>
+            </div>
+            <div class="faq-item">
+                <strong>赛程公布后会随时调整吗？</strong>
+                <p>小组赛阶段可能因转播或场地原因微调，淘汰赛阶段时间相对固定。关注官方页面的更新日志是最稳妥的方式。</p>
+            </div>
+            <div class="faq-item">
+                <strong>为什么需要关注访问提醒？</strong>
+                <p>大型赛事期间流量高度集中，合理规划访问时段、使用稳定网络可显著改善浏览体验。</p>
+            </div>
+            <div class="faq-item">
+                <strong>能否通过本页直接订票？</strong>
+                <p>本页仅提供信息整合和导航，不涉及票务代理。所有门票销售均通过授权平台操作，切勿轻信非官方渠道。</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 底部链接 -->
+<section class="bottom-links">
+    <div class="container">
+        <p>2026年世界杯是全球瞩目的足球盛事，保持信息获取的准确与高效至关重要。</p>
+        <p>你可以随时通过 <a href="https://pc-cn-fifa2026.com">世界杯</a> 官方入口获取最新动态与权威公告。</p>
+        <div class="link-group">
+            <a href="https://pc-cn-fifa2026.com">世界杯</a>
+            <span style="color: #b0bcca;">·</span>
+            <a href="https://pc-cn-fifa2026.com" style="text-decoration: none; border-bottom: 1px dotted #c1352b;">世界杯</a>
+            <span style="color: #b0bcca;">·</span>
+            <span style="color: #5f6f82;">本页仅作信息参考</span>
+        </div>
+        <p style="margin-top: 1.5rem; font-size: 0.82rem; color: #6b7b8f;">内容基于公开资料整理 · 不构成任何官方声明</p>
+    </div>
+</section>
+
+</body>
+</html>

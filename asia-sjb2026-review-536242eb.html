@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>世界杯简明指南 · 亚洲区访问提醒</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+      background: #f4f9fc;
+      color: #1a2e3b;
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* ----- hero ----- */
+    .hero {
+      background: linear-gradient(135deg, #0b4c5e 0%, #1f7c8c 50%, #3da8a5 100%);
+      color: white;
+      padding: 80px 20px 70px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::after {
+      content: '';
+      position: absolute;
+      bottom: -40px;
+      left: -10%;
+      width: 120%;
+      height: 80px;
+      background: #f4f9fc;
+      border-radius: 50% 50% 0 0 / 100% 100% 0 0;
+    }
+
+    .hero h1 {
+      font-size: 2.6rem;
+      font-weight: 600;
+      letter-spacing: 1px;
+      margin-bottom: 16px;
+    }
+
+    .hero h1 span {
+      background: rgba(255, 255, 255, 0.15);
+      padding: 0 12px;
+      border-radius: 40px;
+      display: inline-block;
+    }
+
+    .hero p {
+      font-size: 1.15rem;
+      max-width: 680px;
+      margin: 16px auto 0;
+      opacity: 0.92;
+    }
+
+    .sub-badge {
+      display: inline-block;
+      background: rgba(255, 255, 255, 0.18);
+      padding: 6px 18px;
+      border-radius: 40px;
+      font-size: 0.85rem;
+      margin-top: 24px;
+      backdrop-filter: blur(2px);
+    }
+
+    /* ----- 网格卡片 通用 ----- */
+    .section {
+      padding: 60px 0;
+    }
+
+    .section-title {
+      font-size: 1.8rem;
+      font-weight: 600;
+      color: #0b4c5e;
+      text-align: center;
+      margin-bottom: 40px;
+      letter-spacing: 0.5px;
+      position: relative;
+    }
+
+    .section-title::after {
+      content: '';
+      display: block;
+      width: 60px;
+      height: 3px;
+      background: #3da8a5;
+      margin: 12px auto 0;
+      border-radius: 4px;
+    }
+
+    .grid-card {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 28px;
+    }
+
+    .card {
+      background: white;
+      border-radius: 18px;
+      padding: 28px 22px;
+      box-shadow: 0 4px 12px rgba(13, 80, 94, 0.06);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      border: 1px solid #e3f0f2;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 28px rgba(11, 76, 94, 0.10);
+      border-color: #98d2d0;
+    }
+
+    .card .emoji-icon {
+      font-size: 2rem;
+      margin-bottom: 12px;
+      display: block;
+    }
+
+    .card h3 {
+      font-size: 1.15rem;
+      font-weight: 600;
+      color: #0b4c5e;
+      margin-bottom: 8px;
+    }
+
+    .card p {
+      font-size: 0.95rem;
+      color: #2c4a58;
+    }
+
+    /* ----- 说明区（单列宽版） ----- */
+    .explain-block {
+      background: white;
+      border-radius: 24px;
+      padding: 36px 34px;
+      box-shadow: 0 4px 14px rgba(13, 80, 94, 0.04);
+      border-left: 6px solid #3da8a5;
+      margin: 40px 0;
+    }
+
+    .explain-block p {
+      margin-bottom: 16px;
+      font-size: 1.02rem;
+    }
+
+    .explain-block p:last-child {
+      margin-bottom: 0;
+    }
+
+    .highlight-link {
+      color: #0b6b78;
+      font-weight: 600;
+      text-decoration: none;
+      border-bottom: 2px solid #98d2d0;
+      transition: border-color 0.2s;
+    }
+
+    .highlight-link:hover {
+      border-bottom-color: #0b4c5e;
+    }
+
+    /* ----- FAQ 摘要 ----- */
+    .faq-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px 40px;
+    }
+
+    .faq-item {
+      background: white;
+      border-radius: 18px;
+      padding: 22px 24px;
+      box-shadow: 0 2px 8px rgba(13, 80, 94, 0.04);
+      border: 1px solid #deeef0;
+    }
+
+    .faq-item h4 {
+      font-size: 1rem;
+      font-weight: 600;
+      color: #0b4c5e;
+      margin-bottom: 6px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .faq-item h4::before {
+      content: '▸';
+      color: #3da8a5;
+      font-weight: 700;
+      font-size: 1.2rem;
+    }
+
+    .faq-item p {
+      font-size: 0.93rem;
+      color: #2e4f5c;
+      padding-left: 20px;
+    }
+
+    /* ----- 底部链接区 ----- */
+    .footer-links {
+      background: #e6f2f5;
+      padding: 32px 20px;
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    .footer-links a {
+      color: #0b5e6b;
+      text-decoration: none;
+      border-bottom: 1px dotted #7bbcb8;
+      margin: 0 12px;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+
+    .footer-links a:hover {
+      color: #05333e;
+      border-bottom-color: #05333e;
+    }
+
+    .footer-links p {
+      margin-top: 14px;
+      font-size: 0.85rem;
+      color: #3c6a74;
+    }
+
+    /* ----- 响应式细节 ----- */
+    @media (max-width: 720px) {
+      .hero h1 {
+        font-size: 1.9rem;
+      }
+      .hero p {
+        font-size: 1rem;
+      }
+      .section-title {
+        font-size: 1.5rem;
+      }
+      .grid-card {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+      .faq-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+      }
+      .explain-block {
+        padding: 24px 18px;
+      }
+      .footer-links a {
+        display: inline-block;
+        margin: 6px 10px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .hero {
+        padding: 60px 16px 50px;
+      }
+      .hero h1 {
+        font-size: 1.6rem;
+      }
+      .card {
+        padding: 20px 16px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container">
+      <h1><span>世界杯</span> 简明指南</h1>
+      <p>从赛程结构到访问准备，一份给亚洲球迷的实用路线图。无论你身在何处，这里帮你快速理清脉络。</p>
+      <div class="sub-badge">📋 基于公开信息整理 · 2026 周期</div>
+    </div>
+  </section>
+
+  <!-- 优势区：为什么需要一份指南 -->
+  <section class="section">
+    <div class="container">
+      <h2 class="section-title">为什么需要这份指南</h2>
+      <div class="grid-card">
+        <div class="card">
+          <span class="emoji-icon">🌍</span>
+          <h3>赛区跨度大</h3>
+          <p>本届赛事由多个城市共同承办，亚洲球迷需要提前了解时区、城市间交通以及官方票务渠道。</p>
+        </div>
+        <div class="card">
+          <span class="emoji-icon">📱</span>
+          <h3>数字服务先行</h3>
+          <p>从官方 app 到本地运营商网络，提前熟悉数字生态能大幅提升现场体验与信息获取效率。</p>
+        </div>
+        <div class="card">
+          <span class="emoji-icon">🧭</span>
+          <h3>规则与礼仪</h3>
+          <p>各比赛场馆对携带物品、入场时间有明确规范，熟悉这些细节可以避免不必要的麻烦。</p>
+        </div>
+        <div class="card">
+          <span class="emoji-icon">🕒</span>
+          <h3>亚洲时区适配</h3>
+          <p>多场关键比赛安排在亚洲晚间黄金时段，提前规划收看或出行方案，让观赛节奏更从容。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 说明区：从指南到访问提醒 -->
+  <section class="section" style="padding-top: 0;">
+    <div class="container">
+      <div class="explain-block">
+        <p><strong>理解赛事体系</strong> —— 世界杯不仅是 32 支球队的角逐，更是一套完整的资格赛、抽签与分组逻辑。亚洲区预选赛已产生多支晋级队伍，了解赛制能帮你更早判断各队走势与潜在对局。</p>
+        <p><strong>访问资源筹备</strong> —— 官方媒体中心、票务平台以及授权信息源是获取第一手动态的最佳窗口。很多亚洲用户习惯通过本地社区获取二手信息，但我们建议将 <a href="https://asia-sjb2026.com" class="highlight-link">世界杯</a> 的官方网站作为信息锚点，再结合区域媒体验证细节，这样既能覆盖广度，又不失准确度。</p>
+        <p><strong>出行与观赛节点</strong> —— 小组赛密集期往往伴随城市间客流高峰，提前预订住宿、下载离线地图、备好常用翻译工具，会让整个行程顺畅许多。对于无法到场的观众，多数场次提供多语种直播及实时数据流，同样值得留意。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ 摘要 -->
+  <section class="section" style="padding-top: 0;">
+    <div class="container">
+      <h2 class="section-title">常见问题 · 摘要</h2>
+      <div class="faq-grid">
+        <div class="faq-item">
+          <h4>亚洲区有多少支球队晋级？</h4>
+          <p>根据当前名额分配，亚洲区有 8 个直接晋级席位（含东道主），另有一个洲际附加赛名额。具体名单随预选赛进程更新。</p>
+        </div>
+        <div class="faq-item">
+          <h4>在哪里可以获取官方票务信息？</h4>
+          <p>所有公开售票均通过 FIFA 官方渠道分阶段释放，亚洲球迷可关注区域票务代理公告。转售市场存在风险，请务必认准授权平台。</p>
+        </div>
+        <div class="faq-item">
+          <h4>移动端有什么推荐的观赛工具？</h4>
+          <p>官方 app 提供赛程、积分、实时数据及场馆导航；此外部分流媒体平台会提供多语言解说，建议提前测试网络兼容性。</p>
+        </div>
+        <div class="faq-item">
+          <h4>主办城市之间交通方便吗？</h4>
+          <p>主要承办城市由高速铁路和航线连接，赛会期间预计会增加临时班次。建议通过官方交通指南查询接驳方案与优惠通票。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 底部链接 -->
+  <div class="footer-links">
+    <a href="https://asia-sjb2026.com">世界杯</a>
+    <a href="#">隐私说明</a>
+    <a href="#">关于本页</a>
+    <a href="#">数据来源</a>
+    <p>基于公开信息整合 · 非官方页面 · 仅作访问参考</p>
+  </div>
+
+</body>
+</html>

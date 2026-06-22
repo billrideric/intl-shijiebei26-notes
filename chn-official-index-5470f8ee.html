@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>世界杯资料索引 · 信息集纳站</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', 'PingFang SC', Roboto, system-ui, sans-serif;
+      background-color: #f4f6fa;
+      color: #1e293b;
+      line-height: 1.7;
+    }
+
+    /* 深色头图 */
+    .hero {
+      background: linear-gradient(145deg, #0b1a2e 0%, #102b3f 100%);
+      padding: 4rem 2rem 5rem;
+      text-align: center;
+      color: #eaf0f6;
+      border-bottom: 4px solid #facc15;
+    }
+
+    .hero h1 {
+      font-size: 2.8rem;
+      font-weight: 600;
+      letter-spacing: 2px;
+      margin-bottom: 0.8rem;
+      text-shadow: 0 2px 6px rgba(0,0,0,0.3);
+    }
+
+    .hero .sub {
+      font-size: 1.15rem;
+      max-width: 680px;
+      margin: 0 auto 0.6rem;
+      opacity: 0.85;
+    }
+
+    .hero .badge {
+      display: inline-block;
+      background: #facc15;
+      color: #0b1a2e;
+      font-weight: 600;
+      padding: 0.25rem 1.2rem;
+      border-radius: 40px;
+      font-size: 0.9rem;
+      margin-top: 0.6rem;
+      letter-spacing: 0.5px;
+    }
+
+    /* 正文区 */
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 2.8rem 1.5rem 4rem;
+    }
+
+    .section-title {
+      font-size: 1.7rem;
+      font-weight: 600;
+      margin: 2.2rem 0 1.2rem;
+      border-left: 5px solid #facc15;
+      padding-left: 1rem;
+      color: #0f2a3b;
+    }
+
+    .section-title:first-of-type {
+      margin-top: 0.2rem;
+    }
+
+    .lead {
+      font-size: 1.08rem;
+      color: #2c3e50;
+      margin-bottom: 1.8rem;
+      background: #ffffffd9;
+      padding: 1rem 1.5rem;
+      border-radius: 12px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.03);
+      border: 1px solid #e9edf2;
+    }
+
+    /* 卡片网格 */
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.8rem;
+      margin: 2rem 0;
+    }
+
+    .card {
+      background: #ffffff;
+      border-radius: 20px;
+      padding: 1.8rem 1.4rem 1.8rem;
+      box-shadow: 0 8px 20px rgba(0, 20, 30, 0.06);
+      transition: all 0.2s ease;
+      border: 1px solid #eef2f6;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 28px rgba(0, 20, 40, 0.08);
+    }
+
+    .card h3 {
+      font-size: 1.3rem;
+      margin-bottom: 0.6rem;
+      color: #0b2c3f;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .card p {
+      color: #334155;
+      font-size: 0.98rem;
+      margin-bottom: 0.2rem;
+    }
+
+    .card .tag {
+      display: inline-block;
+      background: #eef6fb;
+      color: #1f4a6b;
+      padding: 0.2rem 0.9rem;
+      border-radius: 50px;
+      font-size: 0.78rem;
+      margin-top: 0.8rem;
+      font-weight: 500;
+    }
+
+    /* 适合人群区块 */
+    .audience-box {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem 1.6rem;
+      background: #ffffff;
+      padding: 2rem 2rem;
+      border-radius: 24px;
+      margin: 1.8rem 0 2.5rem;
+      border: 1px solid #e3eaf2;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.02);
+    }
+
+    .audience-item {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 1rem;
+      background: #f1f6fb;
+      padding: 0.5rem 1.2rem 0.5rem 1rem;
+      border-radius: 60px;
+      color: #1f4059;
+    }
+
+    .audience-item span {
+      font-weight: 500;
+    }
+
+    /* 自然链接段落 */
+    .link-sentence {
+      background: #ffffffec;
+      padding: 1.8rem 2rem;
+      border-radius: 24px;
+      margin: 2.5rem 0 1.8rem;
+      border: 1px solid #dee7ef;
+      font-size: 1.05rem;
+      line-height: 1.8;
+    }
+
+    .link-sentence a {
+      color: #b45309;
+      background: #fef7e6;
+      padding: 0.02rem 0.4rem;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 500;
+      border-bottom: 1px solid #facc1580;
+      transition: background 0.15s;
+    }
+
+    .link-sentence a:hover {
+      background: #fde9b0;
+      border-bottom-color: #b45309;
+    }
+
+    /* 摘要 / FAQ 风格 */
+    .faq-mini {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.8rem;
+      margin: 2.6rem 0 1.5rem;
+    }
+
+    .faq-item {
+      background: #ffffff;
+      padding: 1.4rem 1.6rem;
+      border-radius: 16px;
+      border-left: 4px solid #facc15;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+    }
+
+    .faq-item strong {
+      display: block;
+      font-size: 1.1rem;
+      margin-bottom: 0.5rem;
+      color: #0f2e42;
+    }
+
+    .faq-item p {
+      color: #2c3f53;
+      font-size: 0.96rem;
+    }
+
+    .footnote {
+      margin-top: 2.8rem;
+      font-size: 0.9rem;
+      color: #5d6f82;
+      border-top: 1px solid #dce4ed;
+      padding-top: 1.6rem;
+      text-align: center;
+    }
+
+    a {
+      color: #b45309;
+    }
+
+    @media (max-width: 580px) {
+      .hero h1 { font-size: 2rem; }
+      .hero { padding: 2.8rem 1rem 3.5rem; }
+      .container { padding: 1.8rem 1rem 3rem; }
+      .card-grid { gap: 1.2rem; }
+      .audience-box { padding: 1.5rem 1rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 深色头图 -->
+  <header class="hero">
+    <h1>⚽ 世界杯 · 信息索引</h1>
+    <p class="sub">从历届赛程、球队数据到文化细节 —— 把分散的资料整理成可检索的知识卡片</p>
+    <span class="badge">资料集纳 · 持续更新</span>
+  </header>
+
+  <main class="container">
+
+    <!-- 主视觉 / 介绍 -->
+    <section>
+      <div class="lead">
+        <strong>世界杯</strong> 不仅是顶级足球赛事，更是一座庞大的信息富矿。每届比赛产生超过 60 场比赛、数百项统计数据、大量战术记录与影像档案。这个页面尝试以整理者的视角，将常见的信息需求归类，方便快速定位资料方向。
+      </div>
+    </section>
+
+    <!-- 用途卡片 -->
+    <h2 class="section-title">📇 信息用途卡片</h2>
+    <div class="card-grid">
+      <div class="card">
+        <h3>📊 赛程与结果</h3>
+        <p>小组赛对阵、淘汰赛晋级图、比分与进球时间线。适合复盘比赛节奏或追溯特定轮次。</p>
+        <span class="tag">原始数据</span>
+      </div>
+      <div class="card">
+        <h3>🏆 冠军与奖杯</h3>
+        <p>历届冠军所属国家、举办年份、决赛比分及奖杯更迭历史。包含雷米特杯与大力神杯两阶段。</p>
+        <span class="tag">编年史</span>
+      </div>
+      <div class="card">
+        <h3>🧮 球员统计</h3>
+        <p>射手榜、助攻、出场次数、扑救、关键传球等指标，支持按届次或国家队筛选。</p>
+        <span class="tag">数据库</span>
+      </div>
+      <div class="card">
+        <h3>📺 影像与记录</h3>
+        <p>官方集锦、纪录片、经典比赛全场的存档索引，以及媒体发布的战术分析图表。</p>
+        <span class="tag">媒资</span>
+      </div>
+    </div>
+
+    <!-- 适合人群 -->
+    <h2 class="section-title">🧑‍🤝‍🧑 适合的信息使用者</h2>
+    <div class="audience-box">
+      <div class="audience-item"><span>📰 体育编辑</span> 快速提取事实</div>
+      <div class="audience-item"><span>📚 数据分析者</span> 查找结构化数据</div>
+      <div class="audience-item"><span>🎥 视频创作者</span> 素材背景核对</div>
+      <div class="audience-item"><span>🏫 教育/科普</span> 文化知识参考</div>
+      <div class="audience-item"><span>⚽ 球迷</span> 深度信息追溯</div>
+    </div>
+
+    <!-- 自然链接段落 -->
+    <div class="link-sentence">
+      <p>如果你希望进一步查阅官方发布的完整赛历、球队名单或历史统计数据，可以访问 <a href="https://chn-official-fifaworldcup.com">世界杯</a> 的主信息页面，那里聚合了多届赛事的原始档案与官方公告，适合作为进一步研究的起点。</p>
+    </div>
+
+    <!-- FAQ 摘要卡片（知识型） -->
+    <h2 class="section-title">🔍 常见资料查询要点</h2>
+    <div class="faq-mini">
+      <div class="faq-item">
+        <strong>历届东道主</strong>
+        <p>1930 乌拉圭起始，至今共 22 届。东道主分布在南美、欧洲、北美、亚洲及非洲。2026 年将由美国、加拿大、墨西哥联合举办。</p>
+      </div>
+      <div class="faq-item">
+        <strong>比赛用球演变</strong>
+        <p>从 1930 年的手工缝制皮球到 2022 年的 Al Rihla 智能球。每届用球都有独立命名和技术迭代记录。</p>
+      </div>
+      <div class="faq-item">
+        <strong>吉祥物与主题曲</strong>
+        <p>自 1966 年 Willie 开始，吉祥物成为文化符号。主题曲和官方海报同样构成每届独特的视觉档案。</p>
+      </div>
+      <div class="faq-item">
+        <strong>裁判与规则变更</strong>
+        <p>VAR 引入（2018）、替补名额调整、加时赛规则等，可在每届比赛的技术报告中找到详细说明。</p>
+      </div>
+    </div>
+
+    <!-- 一个额外的引用提示 -->
+    <div style="margin: 2rem 0 0.8rem; background: #f0f4fa; padding: 1.2rem 1.8rem; border-radius: 20px; font-size: 0.95rem; color: #1d3a4f;">
+      💡 <strong>索引建议：</strong> 许多档案资料以年份或赛会制为分类标准，建议在检索时同时使用“届次+关键词”组合（例如“2022 世界杯 传球成功率”），精准度更高。
+    </div>
+
+    <div class="footnote">
+      资料整理导向 · 信息源持续校准 · 页面仅用作索引参考
+    </div>
+  </main>
+
+</body>
+</html>
